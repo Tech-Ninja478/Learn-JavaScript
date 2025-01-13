@@ -1,33 +1,28 @@
-// // // Var
+var x = 5;
+let y = 10;
+const z = 15;
 
-// var x = 1;
-// var x = 2;
-// console.log(x);
-
-// // Let
-
-// let z = 1;
-// z = 2;
-// console.log(z);
-
-// // Const
-
-// const y = 1;
-// y = 2;
-// console.log(y);
-
-// Local Scope Block
-
-{
-  let y = 4;
-  console.log(y);
-}
-
-// Local Scope Function
+console.log(`Global: ${x}`);
+console.log(`Global: ${y}`);
+console.log(`Global: ${z}`);
 
 function myFunc() {
-  const z = 5;
-  console.log(z);
+  var x = 12;
+  let y = 15;
+  const z = 18;
+  {
+    var x = 20;
+    let y = 22;
+    const z = 24;
+
+    console.log(`Block: ${x}`);
+    console.log(`Block: ${y}`);
+    console.log(`Block: ${z}`);
+  }
+
+  console.log(`Function: ${x}`);
+  console.log(`Function: ${y}`);
+  console.log(`Function: ${z}`);
 }
 
 myFunc();
