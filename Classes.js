@@ -1,24 +1,23 @@
 class Pizza {
-  constructor(size) {
-    (this.size = size), (this.crust = "Original");
+  crust = "Original";
+  #sauce = "Traditional";
+  #size;
+  constructor(pizzaSize) {
+    this.#size = pizzaSize;
   }
   getCrust() {
     return this.crust;
   }
-  setCrust(pizzacrust) {
-    this.crust = pizzacrust;
+  setCrust(pizzaSize) {
+    this.crust = pizzaSize;
+  }
+  hereYouGo() {
+    console.log(
+      `Here's your ${this.crust} ${this.#sauce} Sauce ${this.#size} pizza`
+    );
   }
 }
 
-class speacialityPizza extends Pizza {
-  constructor(size) {
-    super(size);
-    this.type = "Non-Veg";
-  }
-  slice() {
-    console.log(`Our ${this.type} ${this.size} Pizza has 8 slices`);
-  }
-}
-
-const mySpeciality = new speacialityPizza("Medium");
-mySpeciality.slice();
+const myPizza = new Pizza("Large");
+myPizza.hereYouGo();
+console.log(myPizza.crust);
